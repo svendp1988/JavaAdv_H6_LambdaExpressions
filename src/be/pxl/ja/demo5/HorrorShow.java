@@ -28,7 +28,7 @@ public class HorrorShow {
 		}
 	}
 
-	public void doSomething() {
+	public void meetBarney() {
 		Vampire barney = new Vampire() {
 			@Override
 			public void destroy() {
@@ -43,6 +43,6 @@ public class HorrorShow {
 
 
 	public static void main(String[] args) {
-		new HorrorShow().doSomething();
+		new HorrorShow().meetBarney();
 	}
 }

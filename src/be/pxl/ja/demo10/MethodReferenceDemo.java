@@ -1,6 +1,6 @@
 package be.pxl.ja.demo10;
 
-import be.pxl.ja.streamingservice.model.Movie;
+import be.pxl.ja.demo4.Document;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -27,8 +27,8 @@ public class MethodReferenceDemo {
 		Supplier<Random> randomCreator = Random::new;
 		Random random = randomCreator.get();
 
-		Function<Integer, ArrayList<Movie>> movieListCreator = ArrayList::new;
-		ArrayList<Movie> movieList = movieListCreator.apply(120);
+		Function<Integer, ArrayList<Document>> movieListCreator = ArrayList::new;
+		ArrayList<Document> documentList = movieListCreator.apply(120);
 
 		System.out.println("Instance method (bounded)");
 		IntSupplier randomInt = random::nextInt;

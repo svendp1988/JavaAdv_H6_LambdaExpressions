@@ -4,20 +4,22 @@ import java.util.List;
 
 public class GameBrowser {
 
-	// TODO: implement this class
+	private GameCollection gameCollection;
+
 
 	public GameBrowser(GameCollection gameCollection) {
+		this.gameCollection = gameCollection;
 	}
 
 	public List<VideoGame> showFreeGames() {
-		return null;
+		throw new UnsupportedOperationException("Implement this method");
 	}
 
 	public List<VideoGame> showGamesInGenre(String action) {
-		return null;
+		throw new UnsupportedOperationException("Implement this method");
 	}
 
 	public List<VideoGame> showGamesForSearch(String cd) {
-		return null;
+		throw new UnsupportedOperationException("Implement this method");
 	}
 }
