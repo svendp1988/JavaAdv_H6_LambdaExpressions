@@ -1,30 +1,35 @@
 package be.pxl.ja.oefening1;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class NumberMachine {
 
-	private ArrayList<Integer> numbers = new ArrayList<>();
+	private final ArrayList<Integer> numbers = new ArrayList<>();
 
 	public NumberMachine(int[] numbers) {
-		for (int i = 0; i < numbers.length; i++) {
-			this.numbers.add(numbers[i]);
+		for (int number : numbers) {
+			this.numbers.add(number);
 		}
 	}
 
-	/*
-	TODO: uncomment this method after the NumberFilter interface is created.
+
 	public String processNumbers(NumberFilter filter) {
-		String result = "";
-		for(int i=0;i<numbers.size();i++) {
-			if(filter.check(numbers.get(i))) {
-				if(!result.equals("")) {
-					result += "-";
+		StringBuilder result = new StringBuilder();
+		for (Integer number : numbers) {
+			if (filter.check(number)) {
+				if (!result.toString().equals("")) {
+					result.append("-");
 				}
-				result += numbers.get(i);
+				result.append(number);
 			}
 		}
-		return result;
+		return result.toString();
 	}
-	*/
+
+	public String convertNumber(Function<Integer, String> transformer) {
+		return numbers.stream().map(transformer).collect(Collectors.joining("-"));
+	}
 }

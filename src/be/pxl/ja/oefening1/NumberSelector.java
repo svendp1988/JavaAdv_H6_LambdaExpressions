@@ -1,19 +1,26 @@
 package be.pxl.ja.oefening1;
 
 public class NumberSelector {
+	private final NumberMachine numberMachine;
 
 	public NumberSelector(NumberMachine numberMachine) {
+		this.numberMachine = numberMachine;
 	}
 
 	public String showEvenNumbers() {
-		throw new UnsupportedOperationException("Implement this method");
+		return numberMachine.processNumbers(new NumberFilter() {
+			@Override
+			public boolean check(int n) {
+				return n % 2 == 0;
+			}
+		});
 	}
 
 	public String printHexNumbers() {
-		throw new UnsupportedOperationException("Implement this method");
+		return numberMachine.convertNumber(Integer::toHexString);
 	}
 
 	public String showNumbersAbove(int number) {
-		throw new UnsupportedOperationException("Implement this method");
+		return numberMachine.processNumbers(n -> n > number);
 	}
 }
